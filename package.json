@@ -1,0 +1,12 @@
+{
+  "name": "AdventofCode2022",
+  "version": "1.0.0",
+  "description": "My solutions for the advent of code 2022 challenge",
+  "main": "index.js",
+  "repository": "https://github.com/TrojanerHD/AdventofCode2022",
+  "author": "TrojanerHD <github@trojaner.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.9"
+  }
+}
