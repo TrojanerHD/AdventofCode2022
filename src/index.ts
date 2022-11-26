@@ -9,7 +9,6 @@ export interface DayTime {
 }
 
 class Solution {
-  static readonly #year: string = '2022';
   #day: string;
   #runTimes: DayTime[];
 
@@ -75,7 +74,7 @@ class Solution {
 
   private logger(part: number, message: string, value: string): void {
     console.log(
-      `[Year ${Day.#year}, Day ${this.#day}, Part ${part}] ${message}: ${value}`
+      `[Year 2022, Day ${this.#day}, Part ${part}] ${message}: ${value}`
     );
   }
 }
