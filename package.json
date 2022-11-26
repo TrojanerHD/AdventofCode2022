@@ -8,6 +8,6 @@
   "author": "TrojanerHD <github@trojaner.dev>",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.11.9"
+    "bun-types": "^0.2.2"
   }
 }
