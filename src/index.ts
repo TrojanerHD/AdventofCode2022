@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import Day from './day';
 
 export type Response = Array<{ message: string; value: string }> | undefined;
 
@@ -7,7 +8,7 @@ export interface DayTime {
   time: number;
 }
 
-class Day {
+class Solution {
   static readonly #year: string = '2022';
   #day: string;
   #runTimes: DayTime[];
@@ -85,7 +86,7 @@ const runTimes: DayTime[] = fs.existsSync('./runtimes.json')
 
 async function main() {
   for (const arg of process.argv.filter((_, i): boolean => i > 1)) {
-    if (!isNaN(Number(arg))) await new Day(Number(arg), runTimes).start();
+    if (!isNaN(Number(arg))) await new Solution(Number(arg), runTimes).start();
     else console.error(`Parameter ${arg} is not a number`);
   }
 }
