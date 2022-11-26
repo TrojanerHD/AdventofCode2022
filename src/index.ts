@@ -45,12 +45,13 @@ class Day {
       return;
     }
 
-    const callbackFunction: { main: (data: string) => Response } = await import(
-      `./${Day.#year}/${this.#day}/index`
-    );
+    const data: string = fs.readFileSync(`values.txt`, 'utf8');
+
+    const dayClass: any = await import(`./${this.#day}/index.ts`);
+    const day: Day = new dayClass.default();
 
     const timeStart: number = performance.now();
-    const toLog: Response = callbackFunction.main(data.trim());
+    const toLog: Response = day.main(data.trim());
     const totalTime: number = performance.now() - timeStart;
 
     if (currentDayTime === undefined)
