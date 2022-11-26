@@ -27,13 +27,15 @@ class Day {
       console.log(
         `Day ${this.#day} is expected to run about ${currentDayTime.time}s`
       );
-    const data: string = fs.readFileSync(
-      `./src/${Day.#year}/${this.#day}/values.txt`,
-      'utf8'
-    );
-    process.chdir(`./src/${Day.#year}/${this.#day}`);
 
-    if (!fs.existsSync('index.js')) {
+    if (!fs.existsSync(`./src/${this.#day}`)) {
+      console.error(`The folder for day ${this.#day} does not exist`);
+      return;
+    }
+
+    process.chdir(`./src/${this.#day}`);
+
+    if (!fs.existsSync('index.ts') && !fs.existsSync('index.js')) {
       console.error(`Day ${this.#day} is not solved`);
       process.chdir('../../');
       return;
