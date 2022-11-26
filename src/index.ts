@@ -87,6 +87,6 @@ async function main() {
   }
 }
 
-main();
-
-fs.writeFileSync('./runtimes.json', JSON.stringify(runTimes));
+main()
+  .then(() => fs.writeFileSync('./runtimes.json', JSON.stringify(runTimes)))
+  .catch(console.error);
