@@ -3,17 +3,20 @@ import { Response } from '../index';
 
 export default class Day01 implements Day {
   main(data: string): Response {
-    const elves = [0];
-    let counter = 0;
+    const elves: number[] = [0];
+    let counter: number = 0;
     for (const line of data.split('\n')) {
       if (line === '') {
         counter++;
         elves.push(0);
+        continue;
       }
 
       elves[counter] += Number(line);
     }
-    const sorted = elves.sort((a, b) => (a < b ? 1 : -1));
+    const sorted = elves.sort((a: number, b: number): number =>
+      a < b ? 1 : -1
+    );
     return [
       {
         message:
@@ -23,8 +26,9 @@ export default class Day01 implements Day {
       {
         message: 'The top three elves carry this amount of food',
         value: sorted
-          .filter((_, index: number) => index < 3)
-          .reduce((a, b) => a + b)
+          .reduce((a: number, b: number, i: number): number =>
+            i < 3 ? a + b : a
+          )
           .toString(),
       },
     ];
