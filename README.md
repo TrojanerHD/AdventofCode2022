@@ -29,8 +29,7 @@ My personal solutions of the [Advent of Code 2022](https://adventofcode.com/2022
     <tr>
       <td>Schlauer-Hax</td>
       <td></td>
-      <td colspan=2 align="center"><a href="https://github.com/Schlauer-Hax/advent-of-code">advent-of-code</a></td>
-      <td></td>
+      <td colspan=3 align="center"><a href="https://github.com/Schlauer-Hax/advent-of-code">advent-of-code</a></td>
     </tr>
     <tr>
       <td>networkException</td>
