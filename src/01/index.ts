@@ -14,9 +14,7 @@ export default class Day01 implements Day {
 
       elves[counter] += Number(line);
     }
-    const sorted = elves.sort((a: number, b: number): number =>
-      a < b ? 1 : -1
-    );
+    const sorted = elves.sort((a: number, b: number): number => b - a);
     return [
       {
         message:
