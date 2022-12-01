@@ -8,6 +8,9 @@ export interface DayTime {
   time: number;
 }
 
+const env: string[] = process.argv[0].split('/');
+const bun: boolean = env[env.length - 1] === 'bun';
+
 class Solution {
   #day: string;
   #runTimes: DayTime[];
@@ -35,7 +38,7 @@ class Solution {
 
     process.chdir(`./src/${this.#day}`);
 
-    if (!fs.existsSync('index.ts') && !fs.existsSync('index.js')) {
+    if (!fs.existsSync('index.ts')) {
       console.error(`Day ${this.#day} is not solved`);
       process.chdir('../../');
       return;
@@ -49,7 +52,9 @@ class Solution {
 
     const data: string = fs.readFileSync(`values.txt`, 'utf8');
 
-    const dayClass: any = await import(`./${this.#day}/index.ts`);
+    const dayClass: any = await import(
+      `./${this.#day}/index.${bun ? 't' : 'j'}s`
+    );
     const day: Day = new dayClass.default();
 
     const timeStart: number = performance.now();
