@@ -16,19 +16,10 @@ export default class Day01 implements Day {
     }
     const sorted = elves.sort((a: number, b: number): number => b - a);
     return [
-      {
-        message:
-          'The elf with the most carrying food carries this amount of food',
-        value: sorted[0].toString(),
-      },
-      {
-        message: 'The top three elves carry this amount of food',
-        value: sorted
-          .reduce((a: number, b: number, i: number): number =>
-            i < 3 ? a + b : a
-          )
-          .toString(),
-      },
+      sorted[0],
+      sorted.reduce((a: number, b: number, i: number): number =>
+        i < 3 ? a + b : a
+      ),
     ];
   }
 }
