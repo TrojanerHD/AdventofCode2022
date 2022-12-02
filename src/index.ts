@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import Day from './day';
 
-export type Response = Array<{ message: string; value: string }> | undefined;
+export type Response = (string | number)[];
 
 export interface DayTime {
   day: string;
@@ -58,7 +58,7 @@ class Solution {
     const day: Day = new dayClass.default();
 
     const timeStart: number = performance.now();
-    const toLog: Response = day.main(data.trim());
+    const toLog: (string | number)[] = day.main(data.trim());
     const totalTime: number = performance.now() - timeStart;
 
     if (currentDayTime === undefined)
@@ -72,14 +72,14 @@ class Solution {
     if (!toLog) return;
     for (let i = 0; i < toLog.length; i++) {
       const log = toLog[i];
-      this.logger(i + 1, log.message, log.value);
+      this.logger(i + 1, log);
     }
     console.log(`It took ${totalTime}ms to solve day ${this.#day}`);
   }
 
-  private logger(part: number, message: string, value: string): void {
+  private logger(part: number, value: string | number): void {
     console.log(
-      `[Year 2022, Day ${this.#day}, Part ${part}] ${message}: ${value}`
+      `[Year 2022, Day ${this.#day}, Part ${part}] ${value}`
     );
   }
 }

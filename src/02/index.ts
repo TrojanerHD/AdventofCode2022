@@ -73,17 +73,6 @@ export default class Day02 implements Day {
         continue;
       }
     }
-    return [
-      {
-        message:
-          'If choosing what is on the strategy guide, you get these points',
-        value: points.toString(),
-      },
-      {
-        message:
-          'If choosing what to play according to the strategy guide, you get these points',
-        value: pointsTwo.toString(),
-      },
-    ];
+    return [points, pointsTwo];
   }
 }
