@@ -25,7 +25,7 @@ export default class Day03 implements Day {
 
   private determineItems(rucksacks: string[]): string {
     let lastItems: string = rucksacks[0];
-    for (let i = 1; i < rucksacks.length; i++) {
+    for (let i: number = 1; i < rucksacks.length; i++) {
       lastItems = this.checkTwoRucksacks(lastItems, rucksacks[i]);
     }
     return lastItems;
