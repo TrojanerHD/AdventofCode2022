@@ -3,19 +3,19 @@ import { Response } from '../index';
 
 export default class Day04 implements Day {
   main(data: string): Response {
-    const lines = data.split(/\n/);
-    let result1 = 0;
-    let result2 = 0;
+    const lines: string[] = data.split(/\n/);
+    let result1: number = 0;
+    let result2: number = 0;
     for (const line of lines) {
-      const pairs = line.split(',');
+      const pairs: string[] = line.split(',');
 
-      const both1 = pairs[0].split('-');
-      const start1 = Number(both1[0]);
-      const end1 = Number(both1[1]);
+      const both1: string[] = pairs[0].split('-');
+      const start1: number = Number(both1[0]);
+      const end1: number = Number(both1[1]);
 
-      const both2 = pairs[1].split('-');
-      const start2 = Number(both2[0]);
-      const end2 = Number(both2[1]);
+      const both2: string[] = pairs[1].split('-');
+      const start2: number = Number(both2[0]);
+      const end2: number = Number(both2[1]);
 
       if (
         (start1 <= start2 && end1 >= end2) ||
