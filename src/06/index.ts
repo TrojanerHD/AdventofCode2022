@@ -3,15 +3,18 @@ import { Response } from '../index';
 
 export default class Day06 implements Day {
   main(data: string): Response {
-    const split = data.split('');
-    let array = [];
-    let part1 = -1;
-    let part2 = -1;
-    for (let i = 0; i < split.length; i++) {
-      const letter = split[i];
-      const index = array.findIndex((value) => letter === value);
+    const split: string[] = data.split('');
+    let array: string[] = [];
+    let part1: number = -1;
+    let part2: number = -1;
+    for (let i: number = 0; i < split.length; i++) {
+      const letter: string = split[i];
+      const index: number = array.findIndex(
+        (value: string): boolean => letter === value
+      );
 
-      if (index !== -1) array = array.filter((_, idx) => idx > index);
+      if (index !== -1)
+        array = array.filter((_: string, idx: number): boolean => idx > index);
 
       array.push(letter);
 
