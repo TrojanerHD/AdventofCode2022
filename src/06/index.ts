@@ -15,13 +15,10 @@ export default class Day06 implements Day {
 
       array.push(letter);
 
-      if (array.length === 4 && part1 === -1) {
-        part1 = i + 1;
-      }
+      if (array.length === 4 && part1 === -1) part1 = i + 1;
 
-      if (array.length === 14 && part2 === -1) {
-        part2 = i + 1;
-      }
+      if (array.length === 14 && part2 === -1) part2 = i + 1;
+
       if (part1 !== -1 && part2 !== -1) break;
     }
     return [part1, part2];
