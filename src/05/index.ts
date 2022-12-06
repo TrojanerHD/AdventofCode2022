@@ -3,16 +3,16 @@ import { Response } from '../index';
 
 export default class Day05 implements Day {
   main(data: string): Response {
-    const lines = data.split('\n');
-    let readInput = true;
+    const lines: string[] = data.split('\n');
+    let readInput: boolean = true;
     const staples: string[][] = [];
     const staples2: string[][] = [];
     for (const line of lines) {
       if (line === '') {
         readInput = false;
-        for (let i = 0; i < staples.length; i++) {
+        for (let i: number = 0; i < staples.length; i++) {
           staples2.push([]);
-          for (let j = 0; j < staples[i].length; j++) {
+          for (let j: number = 0; j < staples[i].length; j++) {
             staples2[i].push(staples[i][j]);
           }
         }
@@ -20,8 +20,8 @@ export default class Day05 implements Day {
         continue;
       }
       if (readInput) {
-        for (let i = 0; i < line.length; i += 4) {
-          const toAdd = line.substring(i, i + 3);
+        for (let i: number = 0; i < line.length; i += 4) {
+          const toAdd: string = line.substring(i, i + 3);
           if (!toAdd.startsWith('[')) continue;
           while (staples.length <= Math.floor(i / 4)) staples.push([]);
           staples[Math.floor(i / 4)].push(toAdd);
@@ -29,16 +29,16 @@ export default class Day05 implements Day {
         continue;
       }
 
-      const input = line.split(' ');
-      const count = Number(input[1]);
-      const startIndex = Number(input[3]) - 1;
-      const endIndex = Number(input[5]) - 1;
+      const input: string[] = line.split(' ');
+      const count: number = Number(input[1]);
+      const startIndex: number = Number(input[3]) - 1;
+      const endIndex: number = Number(input[5]) - 1;
 
-      for (let i = 0; i < count; i++) {
+      for (let i: number = 0; i < count; i++) {
         staples2[staples.length].unshift(staples2[startIndex].shift());
         staples[endIndex].unshift(staples[startIndex].shift());
       }
-      for (let i = 0; i < count; i++) {
+      for (let i: number = 0; i < count; i++) {
         staples2[endIndex].unshift(staples2[staples.length].shift());
       }
     }
