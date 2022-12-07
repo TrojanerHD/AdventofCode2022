@@ -95,9 +95,11 @@ export default class Day07 implements Day {
         if (!dir) currentDir.addSize(Number(info[0]));
       }
     }
-    return [root.getSizeOfMaxSize(100000),
+    return [
+      root.getSizeOfMaxSize(100000),
       root
         .getDirectoriesOfMinSize(30000000 - 70000000 + root._size)
-        .sort((a: File, b: File) => a._size - b._size)[0]._size];
+        .sort((a: File, b: File) => a._size - b._size)[0]._size,
+    ];
   }
 }
