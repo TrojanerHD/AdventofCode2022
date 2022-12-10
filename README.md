@@ -4,7 +4,7 @@ My personal solutions of the [Advent of Code 2022](https://adventofcode.com/2022
 
 [![Language](https://img.shields.io/badge/Language-TypeScript-blue)](https://www.typescriptlang.org/)
 [![Environment](https://img.shields.io/badge/Environment-Bun-white)](https://nodejs.org/en/)
-[![Days completed](https://img.shields.io/badge/Days%20completed-9-red)](https://github.com/TrojanerHD/AdventofCode2022)
+[![Days completed](https://img.shields.io/badge/Days%20completed-10-red)](https://github.com/TrojanerHD/AdventofCode2022)
 
 ## Check out solutions from others
 
