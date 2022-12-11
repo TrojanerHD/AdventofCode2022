@@ -22,7 +22,7 @@ export default class Day11 implements Day {
     console.log(
       'Note: This day only runs using Node due to the incompleteness of Bun'
     );
-    console.log('On my machine, the debugger is very slow, so I would recommend not using the debugger and executing the command by hand')
+    console.log('On my machine, the debugger is very slow, so I would recommend to not use the debugger and executing the command by hand')
     const lines = data.split('\n');
     const monkeys: Monkey[] = [];
     for (let line of lines) {
@@ -96,11 +96,11 @@ export default class Day11 implements Day {
           monkey._itemsInspected++;
           monkey._items[j] = monkey._operation(monkey._items[j]);
           monkey._items[j] = Math.floor(monkey._items[j] / 3);
-          let divisable = monkey._items[j] % monkey._divisor === 0;
+          let divisible = monkey._items[j] % monkey._divisor === 0;
 
           const nextMonkey = monkeys.find(
             (newMonkey) =>
-              newMonkey._id === (divisable ? monkey._true : monkey._false)
+              newMonkey._id === (divisible ? monkey._true : monkey._false)
           );
           nextMonkey._items.push(monkey._items[j]);
         }
@@ -120,7 +120,7 @@ export default class Day11 implements Day {
               : monkey._falseMonkey;
 
           while (monkey._items[j] - leastCommon >= 0)
-            monkey._items[j] = monkey._items[j] - leastCommon;
+            monkey._items[j] -= leastCommon;
           nextMonkey._items.push(monkey._items[j]);
         }
 
