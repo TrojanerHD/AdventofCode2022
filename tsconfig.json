@@ -6,7 +6,9 @@
 		"module": "ES2022",
     "types": [
       "bun-types"
-    ]
+    ],
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*.ts"]
 }

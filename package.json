@@ -9,5 +9,9 @@
   "license": "MIT",
   "devDependencies": {
     "bun-types": "^0.2.2"
+  },
+  "dependencies": {
+    "@types/node-dijkstra": "^2.5.3",
+    "node-dijkstra": "^2.5.0"
   }
 }
