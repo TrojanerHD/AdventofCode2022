@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "bun run ${workspaceFolder}/src/index.ts 12",
+      "command": "bun run ${workspaceFolder}/src/index.ts 13",
       "request": "launch",
       "name": "Bun",
       "type": "node-terminal"
@@ -18,7 +18,7 @@
       "program": "${workspaceFolder}/build/src/index.js",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/build/**/*.js"],
-      "args": ["12"]
+      "args": ["13"]
     }
   ]
 }
