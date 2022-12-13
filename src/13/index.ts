@@ -21,22 +21,28 @@ export default class Day13 implements Day {
     const newOrder = [];
     while (newOrder.length < packets.length) newOrder.push(undefined);
 
-    for (let i = 0; i < packets.length - 1; i++) {
+    for (let i = 0; i < packets.length; i++) {
       let newIndex = 0;
+      while (newOrder[newIndex] !== undefined) newIndex++;
+
       for (let j = i + 1; j < packets.length; j++) {
         const comp = this.comparison(
           JSON.parse(packets[i]),
           JSON.parse(packets[j])
         );
         if (comp.wrongOrder || !comp.rightOrder) {
-					newIndex++;
+          newIndex++;
           while (newOrder[newIndex] !== undefined) newIndex++;
         }
       }
 
       newOrder[newIndex] = packets[i];
     }
-    return [indices.reduce((a, b) => a + b)];
+    return [
+      indices.reduce((a, b) => a + b),
+      (newOrder.findIndex((value) => value === '[[2]]') + 1) *
+        (newOrder.findIndex((value) => value === '[[6]]') + 1),
+    ];
   }
 
   private comparison(
