@@ -10,7 +10,7 @@ export default class Day14 implements Day {
   main(data: string): Response {
     const lines = data.split('\n');
     const blocked = [];
-		let maxY = 0;
+    let maxY = 0;
     for (const line of lines) {
       const points = line.split(' -> ');
       for (let i = 0; i < points.length - 1; i++) {
@@ -29,7 +29,7 @@ export default class Day14 implements Day {
             if (!blocked.some((value) => value.x === point1.x && value.y === i))
               blocked.push({ x: point1.x, y: i });
           }
-					maxY = Math.max(maxY, Math.max(point1.y, point2.y));
+          maxY = Math.max(maxY, Math.max(point1.y, point2.y));
         }
         if (point1.y === point2.y) {
           for (
@@ -44,46 +44,82 @@ export default class Day14 implements Day {
       }
     }
 
-    let currentSand = { x: 500, y: 0 };
-		let oldSand = {x: 500, y: 0};
-    let unitsOfSand = 0;
-    while (
-      maxY >= currentSand.y
-    ) {
-			blocked.push(oldSand);
+    let currentSand1 = { x: 500, y: 0 };
+    let oldSand = { x: 500, y: 0 };
+    let unitsOfSand1 = 0;
+    while (maxY >= currentSand1.y) {
+      blocked.push(oldSand);
       if (
         !blocked.some(
-          (value) => value.x === currentSand.x && value.y === currentSand.y + 1
+          (value) =>
+            value.x === currentSand1.x && value.y === currentSand1.y + 1
         )
       ) {
-        currentSand.y++;
+        currentSand1.y++;
         continue;
       }
       if (
         !blocked.some(
           (value) =>
-            value.x === currentSand.x - 1 && value.y === currentSand.y + 1
+            value.x === currentSand1.x - 1 && value.y === currentSand1.y + 1
         )
       ) {
-        currentSand.y++;
-        currentSand.x--;
+        currentSand1.y++;
+        currentSand1.x--;
         continue;
       }
       if (
         !blocked.some(
           (value) =>
-            value.x === currentSand.x + 1 && value.y === currentSand.y + 1
+            value.x === currentSand1.x + 1 && value.y === currentSand1.y + 1
         )
       ) {
-        currentSand.y++;
-        currentSand.x++;
+        currentSand1.y++;
+        currentSand1.x++;
         continue;
       }
 
-			oldSand = {...currentSand};
-      currentSand = { x: 500, y: 0 };
-      unitsOfSand++;
+      oldSand = { ...currentSand1 };
+      currentSand1 = { x: 500, y: 0 };
+      unitsOfSand1++;
     }
-    return [unitsOfSand];
+
+    let currentSand2 = [{ x: 500, y: 0 }];
+    let unitsOfSand2 = 1;
+    let topY = 0;
+    while (topY !== maxY + 1) {
+      const sandLength = currentSand2.length;
+      for (let i = 0; i < sandLength; i++) {
+        const sand = currentSand2[i];
+        if (
+          !blocked
+            .concat(currentSand2)
+            .some((value) => value.x === sand.x && value.y === sand.y + 1)
+        ) {
+          unitsOfSand2++;
+          currentSand2.push({ x: sand.x, y: sand.y + 1 });
+        }
+        if (
+          !blocked
+            .concat(currentSand2)
+            .some((value) => value.x === sand.x - 1 && value.y === sand.y + 1)
+        ) {
+          unitsOfSand2++;
+          currentSand2.push({ x: sand.x - 1, y: sand.y + 1 });
+        }
+        if (
+          !blocked
+            .concat(currentSand2)
+            .some((value) => value.x === sand.x + 1 && value.y === sand.y + 1)
+        ) {
+          unitsOfSand2++;
+          currentSand2.push({ x: sand.x + 1, y: sand.y + 1 });
+        }
+      }
+      currentSand2 = currentSand2.filter((value: Point) => value.y !== topY);
+      topY++;
+    }
+
+    return [unitsOfSand1, unitsOfSand2];
   }
 }
