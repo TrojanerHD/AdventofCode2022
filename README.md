@@ -24,7 +24,7 @@ My personal solutions of the [Advent of Code 2022](https://adventofcode.com/2022
       <td></td>
       <td>️<a href="https://github.com/TrojanerHD/AdventofCode2020#check-out-solutions-from-others">AdventofCode2020</a></td>
       <td><a href="https://github.com/TrojanerHD/AdventofCode2021#check-out-solutions-from-others">AdventofCode2021</a></td>
-      <td>➡ <a href="https://github.com/TrojanerHD/AdventofCode2022">AdventofCode2022</a></td>
+      <td>➡️ <a href="https://github.com/TrojanerHD/AdventofCode2022">AdventofCode2022</a></td>
     </tr>
     <tr>
       <td>Schlauer-Hax</td>
