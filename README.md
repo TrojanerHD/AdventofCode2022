@@ -62,7 +62,7 @@ My personal solutions of the [Advent of Code 2022](https://adventofcode.com/2022
       <td>Seralius</td>
       <td><a href="https://github.com/Seralius/AOC2021">AOC2021</a></td>
       <td></td>
-      <td></td>
+      <td><a href="https://github.com/Seralius/AOC2023">AOC2023</a></td>
     </tr>
     <tr>
       <td>MelanX</td>
