@@ -31,20 +31,19 @@ My personal solutions of the [Advent of Code 2022](https://adventofcode.com/2022
     </tr>
     <tr>
       <td>derNiklaas</td>
-      <td><a href="https://github.com/derNiklaas/Advent-Of-Code-2021">Advent-Of-Code-2021</a></td>
+      <td><a href="https://github.com/derNiklaas/Advent-of-Code-2021">Advent-of-Code-2021</a></td>
       <td><a href="https://github.com/derNiklaas/Advent-of-Code-2022">Advent-of-Code-2022</a></td>
       <td><a href="https://github.com/derNiklaas/Advent-of-Code-2023">Advent-of-Code-2023</a></td>
     </tr>
     <tr>
       <td>LeMoonStar</td>
       <td><a href="https://github.com/LeMoonStar/AoC21">AoC21</a></td>
-      <td><a href="https://github.com/LeMoonStar/AoC21">AoC22</a></td>
-      <td></td>
+      <td><a href="https://github.com/LeMoonStar/AoC22">AoC22</a></td>
+      <td><a href="https://github.com/LeMoonStar/AoC23">AoC23</a></td>
     </tr>
     <tr>
       <td>daanbreur</td>
-      <td colspan=2 align="center"><a href="https://github.com/daanbreur/AdventofCode">AdventofCode</a></td>
-      <td></td>
+      <td colspan=3 align="center"><a href="https://github.com/daanbreur/AdventofCode">AdventofCode</a></td>
     </tr>
     <tr>
       <td>luftkeks</td>
@@ -66,6 +65,12 @@ My personal solutions of the [Advent of Code 2022](https://adventofcode.com/2022
     </tr>
     <tr>
       <td>MelanX</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Lypsilonx</td>
       <td></td>
       <td></td>
       <td></td>
